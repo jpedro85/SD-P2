@@ -1,0 +1,11 @@
+[Inputs]
+Usar
+Refil
+Clock
+[Outputs]
+TemAgua
+TempoDeAgua
+[BiDir]
+[ATTRIBUTES]
+VeriModel Reservatorio
+

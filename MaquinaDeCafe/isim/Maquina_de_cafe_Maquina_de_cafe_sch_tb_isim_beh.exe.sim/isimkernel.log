@@ -1,0 +1,29 @@
+Command line:
+   Maquina_de_cafe_Maquina_de_cafe_sch_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  51998
+
+Sat Jan 22 19:53:00 2022
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 5150.07 Meg
+
+ Total Signals          : 90
+ Total Nets             : 48
+ Total Signal Drivers   : 31
+ Total Blocks           : 18
+ Total Primitive Blocks : 15
+ Total Processes        : 47
+ Total Traceable Variables  : 40
+ Total Scalar Nets and Variables : 223
+Total Line Count : 384
+
+ Total Simulation Time: 0.0625 sec
+
+ Current Memory Usage: 5150.07 Meg
+
+Sat Jan 22 19:53:15 2022
+

@@ -1,0 +1,17 @@
+[Inputs]
+contadorTermobloco
+Reservatorio
+refill
+start
+Power
+clock
+=seletor[1:0]=
+=capsula[3:0]=
+[Outputs]
+BombaAgua
+saida5s
+=EstadoAtual[2:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel Maquina_de_estados
+

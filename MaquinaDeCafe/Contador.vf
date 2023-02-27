@@ -1,0 +1,118 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Contador.vf
+// /___/   /\     Timestamp : 01/20/2022 21:37:46
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog "C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/SimB/PJ2/Contador.vf" -w "C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/SimB/PJ2/Contador.sch"
+//Design Name: Contador
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module FTC_HXILINX_Contador(Q, C, CLR, T);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CLR;	
+   input              T;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+  
+   
+ 
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else if(T)
+          Q <= !Q;
+     end
+   
+endmodule
+`timescale 1ns / 1ps
+
+module Contador(Clock, 
+                I, 
+                Q0, 
+                Q1, 
+                Q2);
+
+    input Clock;
+    input I;
+   output Q0;
+   output Q1;
+   output Q2;
+   
+   wire XLXN_9;
+   wire XLXN_29;
+   wire XLXN_39;
+   wire XLXN_60;
+   wire XLXN_61;
+   wire XLXN_65;
+   wire XLXN_66;
+   wire XLXN_68;
+   wire XLXN_69;
+   wire XLXN_70;
+   wire Q0_DUMMY;
+   wire Q1_DUMMY;
+   wire Q2_DUMMY;
+   
+   assign Q0 = Q0_DUMMY;
+   assign Q1 = Q1_DUMMY;
+   assign Q2 = Q2_DUMMY;
+   (* HU_SET = "XLXI_1_0" *) 
+   FTC_HXILINX_Contador  XLXI_1 (.C(XLXN_39), 
+                                .CLR(XLXN_60), 
+                                .T(XLXN_39), 
+                                .Q(Q0_DUMMY));
+   (* HU_SET = "XLXI_2_1" *) 
+   FTC_HXILINX_Contador  XLXI_2 (.C(XLXN_39), 
+                                .CLR(XLXN_60), 
+                                .T(Q0_DUMMY), 
+                                .Q(Q1_DUMMY));
+   (* HU_SET = "XLXI_3_2" *) 
+   FTC_HXILINX_Contador  XLXI_3 (.C(XLXN_39), 
+                                .CLR(XLXN_60), 
+                                .T(XLXN_9), 
+                                .Q(Q2_DUMMY));
+   AND2  XLXI_7 (.I0(Q1_DUMMY), 
+                .I1(Q0_DUMMY), 
+                .O(XLXN_9));
+   AND2  XLXI_12 (.I0(XLXN_66), 
+                 .I1(XLXN_61), 
+                 .O(XLXN_39));
+   AND2  XLXI_13 (.I0(XLXN_29), 
+                 .I1(Q2_DUMMY), 
+                 .O(XLXN_69));
+   AND2  XLXI_14 (.I0(Q0_DUMMY), 
+                 .I1(XLXN_68), 
+                 .O(XLXN_29));
+   INV  XLXI_43 (.I(Q1_DUMMY), 
+                .O(XLXN_68));
+   AND2  XLXI_65 (.I0(I), 
+                 .I1(Clock), 
+                 .O(XLXN_61));
+   INV  XLXI_68 (.I(I), 
+                .O(XLXN_60));
+   INV  XLXI_69 (.I(XLXN_65), 
+                .O(XLXN_66));
+   OR4  XLXI_70 (.I0(XLXN_69), 
+                .I1(XLXN_70), 
+                .I2(XLXN_70), 
+                .I3(XLXN_70), 
+                .O(XLXN_65));
+   GND  XLXI_71 (.G(XLXN_70));
+endmodule

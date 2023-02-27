@@ -1,0 +1,12 @@
+[Inputs]
+Usar
+Refill
+Clock
+[Outputs]
+TemAgua
+HouveRefill
+=TempoDeAgua[3:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel ReservatorioV4
+

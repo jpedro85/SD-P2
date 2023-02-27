@@ -1,0 +1,11 @@
+[Inputs]
+Usar
+Refil
+Clock
+[Outputs]
+TemAgua
+=TempoDeAgua[3:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel reservatorioV2
+

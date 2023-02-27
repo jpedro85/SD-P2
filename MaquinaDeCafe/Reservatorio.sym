@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="Reservatorio">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2022-1-21T12:55:57</timestamp>
+    <attr value="Reservatorio" name="VeriModel" />
+    <pin polarity="Input" x="64" y="63" name="Usar" />
+    <pin polarity="Input" x="64" y="127" name="Refil" />
+    <pin polarity="Input" x="64" y="191" name="Clock" />
+    <pin polarity="Output" x="320" y="63" name="TemAgua" />
+    <pin polarity="Output" x="320" y="127" name="TempoDeAgua" />
+    <graph>
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="192" y="-8" type="symbol" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="63" type="pin Usar" />
+        <line x2="64" y1="63" y2="63" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="127" type="pin Refil" />
+        <line x2="64" y1="127" y2="127" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="191" type="pin Clock" />
+        <line x2="64" y1="191" y2="191" x1="64" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="63" type="pin TemAgua" />
+        <line x2="320" y1="63" y2="63" x1="320" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="127" type="pin TempoDeAgua" />
+        <line x2="320" y1="127" y2="127" x1="320" />
+        <rect width="256" x="64" y="0" height="192" />
+    </graph>
+</symbol>

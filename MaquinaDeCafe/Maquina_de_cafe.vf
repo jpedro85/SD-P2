@@ -1,0 +1,159 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Maquina_de_cafe.vf
+// /___/   /\     Timestamp : 01/22/2022 13:18:43
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog "C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/SimB/save4/Maquina_de_cafe.vf" -w "C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/SimB/save4/Maquina_de_cafe.sch"
+//Design Name: Maquina_de_cafe
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module FTC_HXILINX_Maquina_de_cafe(Q, C, CLR, T);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CLR;	
+   input              T;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+  
+   
+ 
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else if(T)
+          Q <= !Q;
+     end
+   
+endmodule
+`timescale 1ns / 1ps
+
+module ContadorTermobloco_MUSER_Maquina_de_cafe(Ativar, 
+                                                Clock, 
+                                                Saida);
+
+    input Ativar;
+    input Clock;
+   output Saida;
+   
+   wire Q0;
+   wire Q1;
+   wire Q2;
+   wire XLXN_1;
+   wire XLXN_29;
+   wire XLXN_39;
+   wire XLXN_60;
+   wire XLXN_61;
+   wire XLXN_65;
+   wire XLXN_83;
+   wire Saida_DUMMY;
+   
+   assign Saida = Saida_DUMMY;
+   (* HU_SET = "XLXI_1_0" *) 
+   FTC_HXILINX_Maquina_de_cafe  XLXI_1 (.C(XLXN_39), 
+                                       .CLR(XLXN_60), 
+                                       .T(XLXN_39), 
+                                       .Q(Q0));
+   (* HU_SET = "XLXI_2_1" *) 
+   FTC_HXILINX_Maquina_de_cafe  XLXI_2 (.C(XLXN_39), 
+                                       .CLR(XLXN_60), 
+                                       .T(Q0), 
+                                       .Q(Q1));
+   (* HU_SET = "XLXI_3_2" *) 
+   FTC_HXILINX_Maquina_de_cafe  XLXI_3 (.C(XLXN_39), 
+                                       .CLR(XLXN_60), 
+                                       .T(XLXN_1), 
+                                       .Q(Q2));
+   AND2  XLXI_4 (.I0(Q1), 
+                .I1(Q0), 
+                .O(XLXN_1));
+   AND2  XLXI_5 (.I0(Saida_DUMMY), 
+                .I1(XLXN_61), 
+                .O(XLXN_39));
+   AND2  XLXI_65 (.I0(Ativar), 
+                 .I1(Clock), 
+                 .O(XLXN_61));
+   INV  XLXI_68 (.I(Ativar), 
+                .O(XLXN_60));
+   INV  XLXI_69 (.I(XLXN_65), 
+                .O(Saida_DUMMY));
+   AND2  XLXI_83 (.I0(XLXN_29), 
+                 .I1(Q2), 
+                 .O(XLXN_65));
+   AND2  XLXI_84 (.I0(XLXN_83), 
+                 .I1(Q1), 
+                 .O(XLXN_29));
+   INV  XLXI_85 (.I(Q0), 
+                .O(XLXN_83));
+endmodule
+`timescale 1ns / 1ps
+
+module Maquina_de_cafe(Clock, 
+                       CodigoCapsula, 
+                       Power, 
+                       Refill, 
+                       Seletor, 
+                       Start, 
+                       BombaAgua, 
+                       EstadoAtual, 
+                       TempoDeAgua, 
+                       Termobloco);
+
+    input Clock;
+    input [3:0] CodigoCapsula;
+    input Power;
+    input Refill;
+    input [1:0] Seletor;
+    input Start;
+   output BombaAgua;
+   output [2:0] EstadoAtual;
+   output [3:0] TempoDeAgua;
+   output Termobloco;
+   
+   wire testeRefill;
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_16;
+   wire BombaAgua_DUMMY;
+   
+   assign BombaAgua = BombaAgua_DUMMY;
+   ContadorTermobloco_MUSER_Maquina_de_cafe  XLXI_2 (.Ativar(XLXN_16), 
+                                                    .Clock(Clock), 
+                                                    .Saida(XLXN_3));
+   AND2  XLXI_7 (.I0(XLXN_3), 
+                .I1(XLXN_16), 
+                .O(Termobloco));
+   ReservatorioV4  XLXI_10 (.Clock(Clock), 
+                           .Refill(Refill), 
+                           .Usar(BombaAgua_DUMMY), 
+                           .HouveRefill(testeRefill), 
+                           .TemAgua(XLXN_4), 
+                           .TempoDeAgua(TempoDeAgua[3:0]));
+   Mquina_De_EstadosV2  XLXI_14 (.capsula(CodigoCapsula[3:0]), 
+                                .clock(Clock), 
+                                .contadorTermobloco(XLXN_3), 
+                                .Power(Power), 
+                                .refill(testeRefill), 
+                                .Reservatorio(XLXN_4), 
+                                .seletor(Seletor[1:0]), 
+                                .start(Start), 
+                                .BombaAgua(BombaAgua_DUMMY), 
+                                .EstadoAtual(EstadoAtual[2:0]), 
+                                .saida5s(XLXN_16));
+endmodule

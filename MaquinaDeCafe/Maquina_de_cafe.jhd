@@ -1,0 +1,7 @@
+MODULE Maquina_de_cafe
+	SUBMODULE ContadorTermobloco
+		INSTANCE XLXI_2
+	SUBMODULE ReservatorioV4
+		INSTANCE XLXI_10
+	SUBMODULE Mquina_De_EstadosV2
+		INSTANCE XLXI_14

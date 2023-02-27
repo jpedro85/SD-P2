@@ -1,0 +1,7 @@
+verilog work "ReservatorioV4.v"
+verilog work "Mquina_De_EstadosV2.v"
+verilog work "ContadorTermobloco.vf"
+verilog work "Maquina_de_cafe.vf"
+verilog work "TesteMaquina_cafe.v"
+verilog work "Contador.vf"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

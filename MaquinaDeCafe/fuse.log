@@ -1,0 +1,30 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/Sim/MaquinaDeCafe/Maquina_de_cafe_Maquina_de_cafe_sch_tb_isim_beh.exe -prj C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/Sim/MaquinaDeCafe/Maquina_de_cafe_Maquina_de_cafe_sch_tb_beh.prj work.Maquina_de_cafe_Maquina_de_cafe_sch_tb work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/Sim/MaquinaDeCafe/ReservatorioV4.v" into library work
+Analyzing Verilog file "C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/Sim/MaquinaDeCafe/Mquina_De_EstadosV2.v" into library work
+Analyzing Verilog file "C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/Sim/MaquinaDeCafe/ContadorTermobloco.vf" into library work
+Analyzing Verilog file "C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/Sim/MaquinaDeCafe/Maquina_de_cafe.vf" into library work
+Analyzing Verilog file "C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/Sim/MaquinaDeCafe/TesteMaquina_cafe.v" into library work
+Analyzing Verilog file "C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/Sim/MaquinaDeCafe/Contador.vf" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module FTC_HXILINX_Maquina_de_cafe
+Compiling module AND2
+Compiling module INV
+Compiling module ContadorTermobloco_MUSER_Maquina...
+Compiling module ReservatorioV4
+Compiling module Mquina_De_EstadosV2
+Compiling module Maquina_de_cafe
+Compiling module Maquina_de_cafe_Maquina_de_cafe_...
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: O sistema não conseguiu localizar o caminho especificado, "isim\Maquina_de_cafe_Maquina_de_cafe_sch_tb_isim_beh.exe.sim\libPortability.dll".
+Compiled 9 Verilog Units
+Built simulation executable C:/Users/Francisco MSI/Documents/UNI/Systemas Digitais/P2/Sim/MaquinaDeCafe/Maquina_de_cafe_Maquina_de_cafe_sch_tb_isim_beh.exe
+Fuse Memory Usage: 29304 KB
+Fuse CPU Usage: 531 ms
